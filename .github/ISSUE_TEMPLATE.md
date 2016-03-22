@@ -4,7 +4,7 @@ eg: _v1.0.0_
 ## Issue type:
 > Tick one of the below and label if necessary
 
-- [ ] Bug
+- [ ] Bug
 - [ ] New expansion pack proposal
 
 _**Note**: if you want to suggest a new expansion pack for Cartridge please make sure you are doing so in the [main project repository](https://github.com/cartridge/cartridge/issues/new)._
