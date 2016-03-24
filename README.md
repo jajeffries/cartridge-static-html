@@ -1,4 +1,4 @@
-# Base Module
+# Cartridge Static HTML [![Build Status](https://travis-ci.org/cartridge/cartridge-static-html.svg?branch=master)](https://travis-ci.org/cartridge/cartridge-static-html)
 
 > Starting point for a base [Cartridge](https://github.com/cartridge/cartridge) module
 
