@@ -1,0 +1,44 @@
+{
+	"name": "cartridge-static-html",
+	"version": "0.0.1",
+	"description": "Static HTML compilation using handlebars",
+	"keywords": [
+		"gulp",
+		"dependency",
+		"cartridge",
+		"cartridge-module",
+		"cartridge-task",
+		"handlebars"
+	],
+	"homepage": "https://github.com/cartridge/cartridge-static-html",
+	"bugs": {
+		"url": "https://github.com/cartridge/cartridge-static-html/issues"
+	},
+	"license": "MIT",
+	"author": "Code Computerlove <npm@codecomputerlove.co.uk>",
+	"main": "task.js",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/cartridge/cartridge-static-html.git"
+	},
+	"scripts": {
+		"postinstall": "node scripts/postinstall.js",
+		"preuninstall": "node scripts/preuninstall.js",
+		"test": "echo \"Error: no test specified\" && exit 0"
+	},
+	"dependencies": {
+		"cartridge-module-util": "~0.4.1",
+		"gulp-compile-handlebars": "^0.6.1",
+		"gulp-data": "~1.2.1",
+		"gulp-jsoncombine": "~1.0.3",
+		"gulp-rename": "~1.2.2",
+		"merge": "^1.2.0"
+	},
+	"devDependencies": {
+		"yargs": "^4.3.2",
+		"chai": "1.10.0",
+		"chai-fs": "^0.1.0",
+		"fs-extra": "^0.26.7",
+		"mocha": "^2.4.5"
+	}
+}

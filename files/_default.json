@@ -1,0 +1,14 @@
+{
+	"meta": {
+		"title":              "Site title",
+		"googleVerification": "wefwefwe",
+		"og": {
+			"title":       "Site title",
+			"site_name":   "Site title",
+			"url":         "http://localhost:3001",
+			"image":       "",
+			"description": "Site title",
+			"type":        "website"
+		}
+	}
+}
