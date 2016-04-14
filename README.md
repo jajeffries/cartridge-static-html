@@ -1,4 +1,6 @@
-# Cartridge Static HTML [![Build Status](https://travis-ci.org/cartridge/cartridge-static-html.svg?branch=master)](https://travis-ci.org/cartridge/cartridge-static-html)
+# Cartridge Static HTML
+[![Build Status](https://img.shields.io/travis/cartridge/cartridge-static-html.svg?branch=master&style=flat-square)](https://travis-ci.org/cartridge/cartridge-static-html)
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=flat-square)](http://commitizen.github.io/cz-cli/)
 
 > Static HTML expansion pack for [Cartridge](https://github.com/cartridge/cartridge)
 
