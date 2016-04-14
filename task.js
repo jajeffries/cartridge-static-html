@@ -11,11 +11,8 @@ var merge  = require('merge');
 
 //.Handlebars tasks
 var handlebars  = require('gulp-compile-handlebars');
-var jsoncombine = require('gulp-jsoncombine');
 
 /* jshint node: true */
-
-'use strict';
 
 // Basic data source api pending it being split out to another file
 function getDataSource(projectConfig) {
@@ -99,7 +96,7 @@ module.exports = function(gulp, projectConfig, tasks) {
 		var options = {
 			helpers: templateHelpers,
 			batch:   [projectConfig.paths.src.components]
-		}
+		};
 
 		return gulp.src(taskConfig.src.layouts)
 			.pipe(data(getData))
@@ -129,4 +126,4 @@ module.exports = function(gulp, projectConfig, tasks) {
 	tasks.default.push(TASK_NAME);
 	// Add the task to the watch list
 	tasks.watch.push('watch:' + TASK_NAME);
-}
+};

@@ -9,9 +9,9 @@ var path          = require('path');
 
 var TASK_NAME = 'static_html';
 
-var PATH_HELPERS = 'views/helpers/'
-var PATH_LAYOUTS = 'views/pages/'
-var PATH_DATA    = 'views/data/'
+var PATH_HELPERS = 'views/helpers/';
+var PATH_LAYOUTS = 'views/pages/';
+var PATH_DATA    = 'views/data/';
 
 // Transform function for adding paths
 function projectConfigAddPaths(config) {

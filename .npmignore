@@ -1,5 +1,7 @@
 .git
 .github
 .travis.yml
+.jshintrc
+.editorconfig
 appveyor.yml
 test

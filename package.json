@@ -24,13 +24,13 @@
   "scripts": {
     "postinstall": "node scripts/postinstall.js",
     "preuninstall": "node scripts/preuninstall.js",
-    "test": "echo \"Error: no test specified\" && exit 0"
+    "test": "echo \"Error: no test specified\" && exit 0",
+    "lint": "jshint task.js _config/*.js scripts/*.js"
   },
   "dependencies": {
     "cartridge-module-util": "~0.4.1",
     "gulp-compile-handlebars": "^0.6.1",
     "gulp-data": "~1.2.1",
-    "gulp-jsoncombine": "~1.0.3",
     "gulp-rename": "~1.2.2",
     "merge": "^1.2.0"
   },
@@ -39,6 +39,7 @@
     "chai-fs": "^0.1.0",
     "cz-conventional-changelog": "^1.1.5",
     "fs-extra": "^0.26.7",
+    "jshint": "^2.9.1",
     "mocha": "^2.4.5",
     "yargs": "^4.3.2"
   },
