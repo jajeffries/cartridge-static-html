@@ -24,7 +24,7 @@
   "scripts": {
     "postinstall": "node scripts/postinstall.js",
     "preuninstall": "node scripts/preuninstall.js",
-    "test": "npm run lint",
+    "test": "mocha && npm run lint",
     "lint": "eslint task.js \"**/*.js\""
   },
   "dependencies": {
