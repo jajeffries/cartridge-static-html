@@ -54,7 +54,6 @@
 		"no-iterator": "error",
 		"no-lone-blocks": "error",
 		"no-loop-func": "error",
-		"no-magic-numbers": "error",
 		"consistent-return": "error",
 		"no-extend-native": "error"
 	}

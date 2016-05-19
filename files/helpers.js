@@ -34,8 +34,6 @@
 		 */
 		Handlebars.registerHelper('ifCondition', function (v1, operator, v2, options) {
 			switch (operator) {
-				case '==':
-					return (v1 == v2) ? options.fn(this) : options.inverse(this);
 				case '===':
 					return (v1 === v2) ? options.fn(this) : options.inverse(this);
 				case '<':
@@ -85,6 +83,7 @@
 			if(parseInt(index_count+1)%(mod)=== 0){
 				return block.fn(this);
 			}
+			return 0;
 		});
 
 		/**

@@ -33,7 +33,7 @@ function getDataSource(projectConfig) {
 	};
 
 	api.getPaths = function getPaths() {
-
+		return;
 	};
 
 	return api;
