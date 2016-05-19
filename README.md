@@ -1,6 +1,11 @@
 # Cartridge Static HTML
+
 [![Build Status](https://img.shields.io/travis/cartridge/cartridge-static-html.svg?branch=master&style=flat-square)](https://travis-ci.org/cartridge/cartridge-static-html)
+[![Appveyor status](https://ci.appveyor.com/api/projects/status/github/cartridge/cartridge-static-html?branch=master&svg=true)](https://travis-ci.org/cartridge/cartridge-static-html)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=flat-square)](http://commitizen.github.io/cz-cli/)
+
+[![Dependency Status](https://david-dm.org/cartridge/cartridge-static-html.svg?style=flat-square)](https://david-dm.org/cartridge/cartridge-static-html/caribou)
+[![devDependency Status](https://david-dm.org/cartridge/cartridge-static-html/dev-status.svg?style=flat-square)](https://david-dm.org/cartridge/cartridge-static-html/caribou#info=devDependencies)
 
 > Static HTML expansion pack for [Cartridge](https://github.com/cartridge/cartridge)
 
@@ -92,7 +97,7 @@ For more information see the handlebars documentation on [helpers](http://handle
 
 > TODO: Add more documentation on the basic helpers
 
-* * * 
+* * *
 
 ## Development
 ### Commit message standards [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
