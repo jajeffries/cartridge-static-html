@@ -11,6 +11,12 @@
 
 To use this module, you will need [cartridge-cli](https://github.com/cartridge/cartridge-cli) installed and have a cartridge project setup.
 
+## Maintainers
+
+| Name          | Github Profile                  |
+| ------------- |---------------------------------|
+| Barney Scott  | [bmds](https://github.com/bmds) |
+
 ```sh
 npm install cartridge-static-html --save-dev
 ```
@@ -100,11 +106,7 @@ For more information see the handlebars documentation on [helpers](http://handle
 * * *
 
 ## Development
-### Commit message standards [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
-Try and adhere as closely as possible to the [Angular commit messages guidelines](https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#-git-commit-guidelines).
+Please follow the instructions within the [base module development guide](https://github.com/cartridge/base-module/wiki/Development-guide) when working on this project.
 
-[Commitizen](https://github.com/commitizen/cz-cli) is a command line tool which can help with this:
-```sh
-npm install -g commitizen
-```
-Now, simply use `git cz` instead of `git commit` when committing.
+### Branches
+New work should be commited to the `develop` branch and then merged in to master once complete. Documentation changes can be performed on the master branch.
