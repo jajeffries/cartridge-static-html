@@ -26,6 +26,8 @@ This module adds the following to a project:
 
 * Handlebars [compilation](https://github.com/kaanon/gulp-compile-handlebars)
 
+**The partials directory has deliberately been omitted from the install step. Adding the directory `_partials` in the `views` directory is required to setup partials in the cartridge project (Along with the header and footer partials if required)**
+
 ## Config
 
 Once installed, the config file `task.static-html.js` is created and stored in the `_config` directory in the root of your cartridge project.
