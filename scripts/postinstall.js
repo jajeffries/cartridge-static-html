@@ -29,7 +29,7 @@ function projectConfigAddPaths(config) {
 	}
 
 	if(!config.paths.src.views.hasOwnProperty('data')) {
-		config.paths.src.views.data = 'views/data/';
+		config.paths.src.views.data = PATH_DATA;
 	}
 
 	if(!config.paths.dest.hasOwnProperty(TASK_NAME)) {
