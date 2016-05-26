@@ -16,6 +16,7 @@ To use this module, you will need [cartridge-cli](https://github.com/cartridge/c
 | Name          | Github Profile                  |
 | ------------- |---------------------------------|
 | Barney Scott  | [bmds](https://github.com/bmds) |
+| Tristan Ashley  | [tawashley](https://github.com/tawashley) |
 
 ```sh
 npm install cartridge-static-html --save-dev
