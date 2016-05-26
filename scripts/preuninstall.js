@@ -29,13 +29,13 @@ cartridgeUtil.removeFromRc(packageConfig.name)
 		return cartridgeUtil.modifyProjectConfig(projectConfigDeletePaths);
 	})
 	.then(function() {
-		return cartridgeUtil.removeModuleConfig(path.resolve('_config', 'task.static-html.js'));
+		return cartridgeUtil.removeModuleConfig(path.resolve('_config', 'task.' + TASK_NAME + '.js'));
 	})
 	.then(function() {
 		return cartridgeUtil.removeFromProjectDir([
-			'views/data',
-			'views/helpers',
-			'views/pages',
+			PATH_HELPERS,
+			PATH_LAYOUTS,
+			PATH_DATA
 		])
 	})
 
