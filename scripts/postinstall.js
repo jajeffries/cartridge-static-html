@@ -44,7 +44,7 @@ function modifyProjectConfig() {
 }
 
 function addModuleConfig() {
-	return cartridgeUtil.addModuleConfig(path.resolve('_config', 'task.static-html.js'));
+	return cartridgeUtil.addModuleConfig(path.resolve('_config', 'task.static_html.js'));
 }
 
 // Exit if NODE_ENV is development
