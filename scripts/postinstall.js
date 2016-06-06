@@ -29,7 +29,7 @@ function projectConfigAddPaths(config) {
 	}
 
 	if(!config.paths.src.views.hasOwnProperty('data')) {
-		config.paths.src.views.data = 'views/data/';
+		config.paths.src.views.data = PATH_DATA;
 	}
 
 	if(!config.paths.dest.hasOwnProperty(TASK_NAME)) {
@@ -44,7 +44,7 @@ function modifyProjectConfig() {
 }
 
 function addModuleConfig() {
-	return cartridgeUtil.addModuleConfig(path.resolve('_config', 'task.static-html.js'));
+	return cartridgeUtil.addModuleConfig(path.resolve('_config', 'task.' + TASK_NAME + '.js'));
 }
 
 // Exit if NODE_ENV is development

@@ -16,6 +16,7 @@ To use this module, you will need [cartridge-cli](https://github.com/cartridge/c
 | Name          | Github Profile                  |
 | ------------- |---------------------------------|
 | Barney Scott  | [bmds](https://github.com/bmds) |
+| Tristan Ashley  | [tawashley](https://github.com/tawashley) |
 
 ```sh
 npm install cartridge-static-html --save-dev
@@ -24,6 +25,8 @@ npm install cartridge-static-html --save-dev
 This module adds the following to a project:
 
 * Handlebars [compilation](https://github.com/kaanon/gulp-compile-handlebars)
+
+**The partials directory has deliberately been omitted from the install step. Adding the directory `_partials` in the `views` directory is required to setup partials in the cartridge project (Along with the header and footer partials if required)**
 
 ## Config
 

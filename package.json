@@ -28,7 +28,7 @@
     "lint": "eslint task.js \"**/*.js\""
   },
   "dependencies": {
-    "cartridge-module-util": "~0.4.1",
+    "cartridge-module-util": "~0.5.1",
     "gulp-compile-handlebars": "^0.6.1",
     "gulp-data": "~1.2.1",
     "gulp-rename": "~1.2.2",
