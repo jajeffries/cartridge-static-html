@@ -8,10 +8,11 @@
 	"paths": {
 		"src": {
 			"components": "components/",
+			"defaultdata": "../../files/",
 			"views": {
 				"helpers": "../../files/",
 				"layouts": "../../files/",
-				"data":    "../../files/"
+				"data":    "views/data"
 			}
 		},
 		"dest": {

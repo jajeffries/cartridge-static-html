@@ -10,3 +10,6 @@ logfile.txt
 
 # Dependencies
 node_modules
+
+# Generated
+test/mock-project/build/

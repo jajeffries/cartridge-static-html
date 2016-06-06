@@ -12,8 +12,6 @@ var merge  = require('merge');
 //.Handlebars tasks
 var handlebars  = require('gulp-compile-handlebars');
 
-/* jshint node: true */
-
 // Basic data source api pending it being split out to another file
 function getDataSource(projectConfig) {
 	var api = {};
@@ -41,7 +39,7 @@ function getDataSource(projectConfig) {
 
 // Basic default data source pending it being split out
 function DefaultData(projectConfig) {
-	var defaultData = require(path.resolve(projectConfig.paths.src.views.data, '_default.json'));
+	var defaultData = require(path.resolve(projectConfig.paths.src.defaultdata, '_default.json'));
 
 	return {
 		apply: function apply(data) {
