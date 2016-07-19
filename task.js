@@ -8,6 +8,7 @@ var rename = require('gulp-rename');
 var data   = require('gulp-data');
 var path   = require('path');
 var merge  = require('merge');
+var argv = require('yargs').argv;
 
 //.Handlebars tasks
 var handlebars  = require('gulp-compile-handlebars');
@@ -86,16 +87,14 @@ module.exports = function(gulp, projectConfig, tasks) {
 		return pathData;
 	}
 
+	function getEnvironmentData() {
+		var env = argv.env || 'local';
+		var siteSettingsFileName = './siteSettings' + ((env === 'local') ? '' : '.' + env) + '.js';
+		var siteSettings = require(path.resolve(process.cwd(), siteSettingsFileName));
 
-	// function getEnvironmentData() {
-	// 	var env = argv.env || 'local';
-	// 	var siteSettingsFileName = './siteSettings' + ((env === 'local') ? '' : '.' + env);
-	//
-	// 	var siteSettings = require(siteSettingsFileName);
-	//
-	// 	console.log('site settings file');
-	// 	console.log(siteSettings);
-	// }
+		console.log('site settings file');
+		console.log(siteSettings);
+	}
 
 	/* --------------------
 	*	MODULE TASKS
@@ -108,6 +107,8 @@ module.exports = function(gulp, projectConfig, tasks) {
 			helpers: templateHelpers,
 			batch:   [projectConfig.paths.src.components]
 		};
+
+		getEnvironmentData();
 
 		return gulp.src(taskConfig.src.layouts)
 			.pipe(data(getData))
