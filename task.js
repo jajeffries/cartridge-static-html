@@ -87,7 +87,7 @@ module.exports = function(gulp, projectConfig, tasks) {
 	}
 
 
-	function getEnv() {
+	function getEnvironmentData() {
 		var env = argv.env || 'local';
 		var siteSettingsFileName = './siteSettings' + ((env === 'local') ? '' : '.' + env);
 
