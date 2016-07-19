@@ -84,6 +84,8 @@ module.exports = function(gulp, projectConfig, tasks) {
 		pathData = dataSource.getDataForPath(relativePath);
 		pathData = defaultData.apply(pathData);
 
+		pathData.env = getEnvironmentData();
+
 		return pathData;
 	}
 
@@ -92,8 +94,7 @@ module.exports = function(gulp, projectConfig, tasks) {
 		var siteSettingsFileName = './siteSettings' + ((env === 'local') ? '' : '.' + env) + '.js';
 		var siteSettings = require(path.resolve(process.cwd(), siteSettingsFileName));
 
-		console.log('site settings file');
-		console.log(siteSettings);
+		return siteSettings;
 	}
 
 	/* --------------------
@@ -107,8 +108,6 @@ module.exports = function(gulp, projectConfig, tasks) {
 			helpers: templateHelpers,
 			batch:   [projectConfig.paths.src.components]
 		};
-
-		getEnvironmentData();
 
 		return gulp.src(taskConfig.src.layouts)
 			.pipe(data(getData))
