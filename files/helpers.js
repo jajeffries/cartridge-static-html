@@ -7,11 +7,11 @@
 		* Private methods
 		*/
 
-		Handlebars.registerHelper('isEnv', function(env, options) {
-			if(env === globals.env.name) {
-				return options.fn(this);
-			}
-		});
+		// Handlebars.registerHelper('isEnv', function(env, options) {
+		// 	if(env === globals.env.name) {
+		// 		return options.fn(this);
+		// 	}
+		// });
 
 		/**
 		 * Get the string value of a JSON object, useful for debugging template data
