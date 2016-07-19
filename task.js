@@ -87,15 +87,15 @@ module.exports = function(gulp, projectConfig, tasks) {
 	}
 
 
-	function getEnvironmentData() {
-		var env = argv.env || 'local';
-		var siteSettingsFileName = './siteSettings' + ((env === 'local') ? '' : '.' + env);
-
-		var siteSettings = require(siteSettingsFileName);
-
-		console.log('site settings file');
-		console.log(siteSettings);
-	}
+	// function getEnvironmentData() {
+	// 	var env = argv.env || 'local';
+	// 	var siteSettingsFileName = './siteSettings' + ((env === 'local') ? '' : '.' + env);
+	//
+	// 	var siteSettings = require(siteSettingsFileName);
+	//
+	// 	console.log('site settings file');
+	// 	console.log(siteSettings);
+	// }
 
 	/* --------------------
 	*	MODULE TASKS
