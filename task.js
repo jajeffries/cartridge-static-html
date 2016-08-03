@@ -8,9 +8,12 @@ var rename = require('gulp-rename');
 var data   = require('gulp-data');
 var path   = require('path');
 var merge  = require('merge');
+var fs = require('fs');
 
 //.Handlebars tasks
 var handlebars  = require('gulp-compile-handlebars');
+
+/* jshint node: true */
 
 // Basic data source api pending it being split out to another file
 function getDataSource(projectConfig) {
@@ -37,12 +40,13 @@ function getDataSource(projectConfig) {
 	return api;
 }
 
-// Basic default data source pending it being split out
 function DefaultData(projectConfig) {
-	var defaultData = require(path.resolve(projectConfig.paths.src.defaultdata, '_default.json'));
-
 	return {
 		apply: function apply(data) {
+			//The default data can at times - for some reason, keep the template data of the previous fil
+			//This is a temp fix which reads the default data file for every files to ensure no 'bleeding' of data
+
+			var defaultData = JSON.parse(fs.readFileSync(path.resolve(projectConfig.paths.src.views.data, '_default.json'), 'utf8'));
 			return merge.recursive(defaultData, data);
 		}
 	};
