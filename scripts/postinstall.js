@@ -67,7 +67,6 @@ function copyOverModuleFiles() {
 	}])
 }
 
-
 // Exit if NODE_ENV is development
 cartridgeUtil.exitIfDevEnvironment();
 // Make sure that the .cartridgerc file exists
