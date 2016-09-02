@@ -9,6 +9,7 @@ var path          = require('path');
 
 var TASK_NAME = 'static_html';
 
+var PATH_VIEWS_ROOT = 'views/';
 var PATH_HELPERS = 'views/helpers/';
 var PATH_LAYOUTS = 'views/pages/';
 var PATH_DATA    = 'views/data/';
@@ -63,5 +64,11 @@ cartridgeUtil.addToRc()
 	})
 	.then(function(){
 		return cartridgeUtil.copyFileToProject(path.resolve('files', 'index.hbs'), PATH_LAYOUTS);
+	})
+	.then(function() {
+		return cartridgeUtil.copyToProjectDir([{
+			copyPath: 'files/_partials',
+			destinationPath: PATH_VIEWS_ROOT
+		}])
 	})
 	.then(cartridgeUtil.finishInstall);
