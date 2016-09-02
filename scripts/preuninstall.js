@@ -9,10 +9,6 @@ var path          = require('path');
 
 var TASK_NAME = 'static_html';
 
-var PATH_HELPERS = 'views/helpers/';
-var PATH_LAYOUTS = 'views/pages/';
-var PATH_DATA    = 'views/data/';
-
 function projectConfigDeletePaths(config) {
 
   delete config.paths.src.views.layouts;
@@ -31,12 +27,4 @@ cartridgeUtil.removeFromRc(packageConfig.name)
 	.then(function() {
 		return cartridgeUtil.removeModuleConfig(path.resolve('_config', 'task.' + TASK_NAME + '.js'));
 	})
-	.then(function() {
-		return cartridgeUtil.removeFromProjectDir([
-			PATH_HELPERS,
-			PATH_LAYOUTS,
-			PATH_DATA
-		])
-	})
-
 	.then(cartridgeUtil.finishUninstall)
