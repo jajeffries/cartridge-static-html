@@ -9,10 +9,10 @@ var path          = require('path');
 
 var TASK_NAME = 'static_html';
 
-var PATH_VIEWS_ROOT = 'views/';
 var PATH_HELPERS = 'views/helpers/';
 var PATH_LAYOUTS = 'views/pages/';
 var PATH_DATA    = 'views/data/';
+var PATH_VIEWS = 'views/_partials';
 
 // Transform function for adding paths
 function projectConfigAddPaths(config) {
@@ -59,8 +59,11 @@ function copyOverModuleFiles() {
 		copyPath: 'files/index.hbs',
 		destinationPath: PATH_LAYOUTS
 	},{
-		copyPath: 'files/_partials',
-		destinationPath: PATH_VIEWS_ROOT
+		copyPath: 'files/_partials/footer.hbs',
+		destinationPath: PATH_VIEWS
+	}, {
+		copyPath: 'files/_partials/header.hbs',
+		destinationPath: PATH_VIEWS
 	}])
 }
 
