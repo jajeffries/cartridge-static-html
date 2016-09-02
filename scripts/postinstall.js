@@ -48,6 +48,23 @@ function addModuleConfig() {
 	return cartridgeUtil.addModuleConfig(path.resolve('_config', 'task.' + TASK_NAME + '.js'));
 }
 
+function copyOverModuleFiles() {
+	return cartridgeUtil.copyToProjectDir([{
+		copyPath: 'files/_default.json',
+		destinationPath: PATH_DATA
+	},{
+		copyPath: 'files/helpers.js',
+		destinationPath: PATH_HELPERS
+	},{
+		copyPath: 'files/index.hbs',
+		destinationPath: PATH_LAYOUTS
+	},{
+		copyPath: 'files/_partials',
+		destinationPath: PATH_VIEWS_ROOT
+	}])
+}
+
+
 // Exit if NODE_ENV is development
 cartridgeUtil.exitIfDevEnvironment();
 // Make sure that the .cartridgerc file exists
@@ -56,19 +73,5 @@ cartridgeUtil.ensureCartridgeExists();
 cartridgeUtil.addToRc()
 	.then(modifyProjectConfig)
 	.then(addModuleConfig)
-	.then(function() {
-		return cartridgeUtil.copyToProjectDir([{
-			copyPath: 'files/_default.json',
-			destinationPath: PATH_DATA
-		},{
-			copyPath: 'files/helpers.js',
-			destinationPath: PATH_HELPERS
-		},{
-			copyPath: 'files/index.hbs',
-			destinationPath: PATH_LAYOUTS
-		},{
-			copyPath: 'files/_partials',
-			destinationPath: PATH_VIEWS_ROOT
-		}])
-	})
+	.then(copyOverModuleFiles)
 	.then(cartridgeUtil.finishInstall);
