@@ -56,17 +56,17 @@ cartridgeUtil.ensureCartridgeExists();
 cartridgeUtil.addToRc()
 	.then(modifyProjectConfig)
 	.then(addModuleConfig)
-	.then(function(){
-		return cartridgeUtil.copyFileToProject(path.resolve('files', '_default.json'), PATH_DATA);
-	})
-	.then(function(){
-		return cartridgeUtil.copyFileToProject(path.resolve('files', 'helpers.js'), PATH_HELPERS);
-	})
-	.then(function(){
-		return cartridgeUtil.copyFileToProject(path.resolve('files', 'index.hbs'), PATH_LAYOUTS);
-	})
 	.then(function() {
 		return cartridgeUtil.copyToProjectDir([{
+			copyPath: 'files/_default.json',
+			destinationPath: PATH_DATA
+		},{
+			copyPath: 'files/helpers.js',
+			destinationPath: PATH_HELPERS
+		},{
+			copyPath: 'files/index.hbs',
+			destinationPath: PATH_LAYOUTS
+		},{
 			copyPath: 'files/_partials',
 			destinationPath: PATH_VIEWS_ROOT
 		}])
