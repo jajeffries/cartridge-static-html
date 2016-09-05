@@ -2,7 +2,9 @@
 	"meta": {
 		"title":              "Site title",
 		"googleVerification": "wefwefwe",
-		"og": {
+		"canonical":          "http://localhost:3001",
+		"alternate":          "http://localhost:3001",
+		"og":                 {
 			"title":       "Site title",
 			"site_name":   "Site title",
 			"url":         "http://localhost:3001",

@@ -1,6 +1,7 @@
 /*eslint-env node, mocha */
 
 var path   = require('path');
+var fs     = require('fs-extra');
 var chai   = require('chai');
 var expect = chai.expect;
 
@@ -8,8 +9,13 @@ chai.use(require('chai-fs'));
 chai.should();
 
 var MOCK_PROJECT_DIR = path.join(process.cwd(), 'test', 'mock-project');
+var HTML_FILEPATH    = path.join(MOCK_PROJECT_DIR, 'build');
 
 process.chdir(MOCK_PROJECT_DIR);
+
+function cleanUp() {
+	fs.remove(HTML_FILEPATH);
+}
 
 describe('As a gulpfile', function() {
 	describe('when a task is included', function() {
@@ -46,4 +52,27 @@ describe('As a gulpfile', function() {
 			expect(relative).to.equal('build');
 		});
 	});
+});
+
+describe('As a user of the cartridge-sass module', function() {
+	var gulprunner = require(path.resolve(process.cwd(), 'gulprunner.js'));
+
+	this.timeout(10000);
+
+	describe('when `gulp static_html` is run', function() {
+
+		before(function(done) {
+			gulprunner.run(done);
+		});
+
+		after(function() {
+			cleanUp();
+		});
+
+		it('should generate the index.html file in the build dir', function() {
+			expect(path.join(HTML_FILEPATH, 'index.html')).to.be.a.file();
+		});
+
+	});
+
 });

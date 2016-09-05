@@ -12,8 +12,6 @@ var merge  = require('merge');
 //.Handlebars tasks
 var handlebars  = require('gulp-compile-handlebars');
 
-/* jshint node: true */
-
 // Basic data source api pending it being split out to another file
 function getDataSource(projectConfig) {
 	var api = {};
