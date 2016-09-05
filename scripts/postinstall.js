@@ -12,7 +12,7 @@ var TASK_NAME = 'static_html';
 var PATH_HELPERS = 'views/helpers/';
 var PATH_LAYOUTS = 'views/pages/';
 var PATH_DATA    = 'views/data/';
-var PATH_VIEWS = 'views/_partials';
+var PATH_PARTIALS = 'views/_partials';
 
 // Transform function for adding paths
 function projectConfigAddPaths(config) {
@@ -60,10 +60,10 @@ function copyOverModuleFiles() {
 		destinationPath: PATH_LAYOUTS
 	},{
 		copyPath: 'files/_partials/footer.hbs',
-		destinationPath: PATH_VIEWS
+		destinationPath: PATH_PARTIALS
 	}, {
 		copyPath: 'files/_partials/header.hbs',
-		destinationPath: PATH_VIEWS
+		destinationPath: PATH_PARTIALS
 	}])
 }
 
