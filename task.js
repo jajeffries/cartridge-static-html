@@ -39,7 +39,7 @@ function getDataSource(projectConfig) {
 
 // Basic default data source pending it being split out
 function DefaultData(projectConfig) {
-	var defaultData = require(path.resolve(projectConfig.paths.src.defaultdata, '_default.json'));
+	var defaultData = require(path.resolve(projectConfig.paths.src.views.data, '_default.json'));
 
 	return {
 		apply: function apply(data) {
