@@ -34,7 +34,7 @@ function projectConfigAddPaths(config) {
 	}
 
 	if(!config.paths.dest.hasOwnProperty(TASK_NAME)) {
-		config.paths.dest[TASK_NAME] = 'public/_client/';
+		config.paths.dest[TASK_NAME] = 'public/';
 	}
 
 	return config;
