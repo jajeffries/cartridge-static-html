@@ -1,8 +1,101 @@
 {{> header }}
 
-<div class="wrapper">
-	<h1>Hello World!</h1>
-	<h2>A winner is {{name}}!</h2>
-</div>
+<!-- Welcome page code START -->
+<style>
+	* {
+		box-sizing: border-box;
+	}
 
-{{> footer }}
+	body {
+		background-color: #EFEFEF;
+		font-family: sans-serif;
+	}
+
+	body:before {
+		background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1My41NSA1Mi44NCI+PGRlZnM+PHN0eWxlPi5he2ZpbGw6I2QzMGU0Mjt9LmJ7ZmlsbDojNTQwNzIzO30uY3tmaWxsOiM1MTA5MjM7fS5ke2ZpbGw6I2VhZWFlYTt9LmV7ZmlsbDojM2EzYTNhO30uZntmaWxsOiM1MTUxNTE7fS5ne29wYWNpdHk6MC4zO30uaHtvcGFjaXR5OjAuNTt9Lml7ZmlsbDojMDQwNzA1O30uantmaWxsOm5vbmU7c3Ryb2tlOiMwMDA7c3Ryb2tlLW1pdGVybGltaXQ6MTA7c3Ryb2tlLXdpZHRoOjdweDt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPmNhcnRyaWRnZS1sb2dvPC90aXRsZT48cGF0aCBjbGFzcz0iYSIgZD0iTTEyMS41NSwxMjQuNjZoMy44OVYxMjZIMTIwdi03Ljg4aDUuNDF2MS4zNWgtMy44OXY1LjE4WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTEyMC4wMyAtNzMuMTcpIi8+PHBhdGggY2xhc3M9ImIiIGQ9Ik0xMzAuNTMsMTIyLjcxaC0yLjQ3VjEyNmgtMS41MXYtNy44OGg1LjQxVjEyNmgtMS40MnYtMy4zWm0tMi40Ny0zLjIzdjEuOTVoMi40N3YtMS45NWgtMi40N1oiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xMjAuMDMgLTczLjE3KSIvPjxwYXRoIGNsYXNzPSJiIiBkPSJNMTMzLDEyNnYtNy44OGg1LjQxdjQuNThIMTM2LjZsMS44NSwzLjNIMTM3bC0xLjk0LTMuM2gtMC41M1YxMjZIMTMzWm0xLjUxLTYuNTN2MS45NUgxMzd2LTEuOTVoLTIuNDdaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMTIwLjAzIC03My4xNykiLz48cGF0aCBjbGFzcz0iYiIgZD0iTTE0MS41LDExOS40OGgtMnYtMS4zNWg1LjQxdjEuMzVIMTQzVjEyNkgxNDEuNXYtNi41M1oiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xMjAuMDMgLTczLjE3KSIvPjxwYXRoIGNsYXNzPSJiIiBkPSJNMTQ1Ljg2LDEyNnYtNy44OGg1LjQxdjQuNThoLTEuODVsMS44NSwzLjNoLTEuNDJsLTEuOTQtMy4zaC0wLjUzVjEyNmgtMS41MVptMS41MS02LjUzdjEuOTVoMi40N3YtMS45NWgtMi40N1oiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xMjAuMDMgLTczLjE3KSIvPjxwYXRoIGNsYXNzPSJiIiBkPSJNMTU0LjA3LDEyNmgtMS41MXYtNy44OGgxLjUxVjEyNloiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xMjAuMDMgLTczLjE3KSIvPjxwYXRoIGNsYXNzPSJiIiBkPSJNMTU1LjE3LDEyNnYtNy44OEgxNjBsMC41NywwLjY5djYuNDlMMTYwLDEyNmgtNC44NFptNC02LjUzaC0yLjQ3djUuMThoMi40N3YtNS4xOFoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xMjAuMDMgLTczLjE3KSIvPjxwYXRoIGNsYXNzPSJiIiBkPSJNMTY0LjA5LDEyMS40M2gzVjEyNmgtNS40MXYtNy44OGg1LjQxdjEuMzVoLTMuODl2NS4xOGgyLjQ3di0xLjk1aC0xLjU3di0xLjI4WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTEyMC4wMyAtNzMuMTcpIi8+PHBhdGggY2xhc3M9ImIiIGQ9Ik0xNjkuNjksMTE5LjQ4djEuOTVoMy44OXYxLjI4aC0zLjg5djEuOTVoMy44OVYxMjZoLTUuNDF2LTcuODhoNS40MXYxLjM1aC0zLjg5WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTEyMC4wMyAtNzMuMTcpIi8+PHBvbHlnb24gY2xhc3M9ImMiIHBvaW50cz0iMzAuNiA0LjI3IDMwLjYgMTIuOCAyMi45NSAxNy4wNyAxNS4zIDEyLjggMzAuNiA0LjI3Ii8+PHBvbHlnb24gY2xhc3M9ImQiIHBvaW50cz0iMjkuNjUgNS43NyAxNS4zIDEzLjc3IDMwLjU4IDIyLjMyIDQ0Ljk0IDE0LjMgMjkuNjUgNS43NyIvPjxwb2x5Z29uIGNsYXNzPSJlIiBwb2ludHM9IjUzLjU1IDI1LjYxIDQ1LjkgMjEuMzQgNTMuNTUgMTcuMDcgNTMuNTUgMjUuNjEiLz48cG9seWdvbiBjbGFzcz0iZiIgcG9pbnRzPSIzMS4wNyAzNy4wOSA1Mi44NyAyNS4xNSA0Ni41OCAyMS42OSAzMC42NiAzMC42NyAzMS4wNyAzNy4wOSIvPjxwb2x5bGluZSBjbGFzcz0iZyIgcG9pbnRzPSIzMC40MSAzMi4zNiAzNC4yNCAzNC41OSA0OS41NSAyNi4wOSA0NS42IDIzLjg4IDMwLjQxIDMyLjM2Ii8+PHBvbHlnb24gY2xhc3M9ImMiIHBvaW50cz0iMzQuMjYgMzMuNiAzMC40MiAzMS40NSAzMC40MiAyNy44OCAzNC4yNCAzMC4xMSAzNC4yNiAzMy42Ii8+PHBvbHlnb24gY2xhc3M9ImEiIHBvaW50cz0iMzQuMjQgMzAuMTEgMzQuMjUgMzMuNiA0OS41NSAyNS4wOCA0OS41NSAyMS42MSAzNC4yNCAzMC4xMSIvPjxwb2x5bGluZSBjbGFzcz0iYSIgcG9pbnRzPSIzMC40MSAyNy44OCAzNC4yNCAzMC4xMSA0OS41NSAyMS42MSA0NS42IDE5LjQgMzAuNDEgMjcuODgiLz48cG9seWxpbmUgY2xhc3M9ImciIHBvaW50cz0iMzAuNDEgMjcuODggMzQuMjQgMzAuMTEgNDkuNTUgMjEuNjEgNDUuNiAxOS40IDMwLjQxIDI3Ljg4Ii8+PHBvbHlnb24gY2xhc3M9ImgiIHBvaW50cz0iMzQuMjYgMzMuNiAzMC40MiAzMS40NSAzMC40MiAyNy44OCAzNC4yNCAzMC4xMSAzNC4yNiAzMy42Ii8+PHBvbHlnb24gY2xhc3M9ImkiIHBvaW50cz0iMzUuOTQgMzAuOCAzNS45NSAzMS4zMiA0OC4zOCAyNC4zOCA0OC4zOCAyMy44OCAzNS45NCAzMC44Ii8+PHBvbHlnb24gY2xhc3M9ImMiIHBvaW50cz0iMCAxMi44IDAgMjEuMzQgMzAuNiAzOC40MSAzMC42IDI5Ljg4IDAgMTIuOCIvPjxwYXRoIGNsYXNzPSJjIiBkPSJNMTcyLjU4LDkxLjk1Vjk4LjJsLTIxLDExLjY5di02LjI1bDIxLTExLjY5bTEtMS43LTIzLDEyLjh2OC41NGwyMy0xMi44MVY5MC4yNWgwWiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTEyMC4wMyAtNzMuMTcpIi8+PHBhdGggY2xhc3M9ImMiIGQ9Ik0xNDMsNzMuNTJsNywzLjkyLTE0LjgzLDguMjctMC40Ny4yNiwwLjQ3LDAuMjYsMTUuMyw4LjU0LDAuMTUsMC4wOCwwLjE1LS4wOCwxNS4xNS04LjQ1LDcuMzUsNC4xdjguMThsLTIyLjY1LDEyLjY0LTMwLjMtMTYuOTFWODYuMTVMMTQzLDczLjUybTAtLjM0TDEyMCw4NnY4LjU0bDMwLjYsMTcuMDcsMjMtMTIuODFWOTAuMjVMMTY1LjkzLDg2bC0xNS4zLDguNTRMMTM1LjMzLDg2bDE1LjMtOC41NEwxNDMsNzMuMTdoMFoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xMjAuMDMgLTczLjE3KSIvPjxwb2x5Z29uIGNsYXNzPSJhIiBwb2ludHM9IjAgMTIuOCAyMi45NSAwIDMwLjYgNC4yNyAxNS4zIDEyLjggMzAuNiAyMS4zNCA0NS45IDEyLjggNTMuNTUgMTcuMDcgMzAuNzIgMjkuOTYgMCAxMi44Ii8+PHBhdGggY2xhc3M9ImoiIGQ9Ik0xNDQuNjYsODkuMTkiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xMjAuMDMgLTczLjE3KSIvPjxwb2x5Z29uIGNsYXNzPSJhIiBwb2ludHM9IjIzLjMgMTQuMDcgMjIuNzggMTMuNzggMzEuMSA5LjIzIDMxLjYzIDkuNTEgMjMuMyAxNC4wNyIvPjxwb2x5Z29uIGNsYXNzPSJhIiBwb2ludHM9IjI1LjE4IDE1LjEyIDI0LjY1IDE0LjgzIDMyLjk4IDEwLjI3IDMzLjUyIDEwLjU1IDI1LjE4IDE1LjEyIi8+PHBvbHlnb24gY2xhc3M9ImEiIHBvaW50cz0iMjcuMTUgMTYuMjIgMjYuNjMgMTUuOTMgMzQuOTYgMTEuMzcgMzUuNSAxMS42NSAyNy4xNSAxNi4yMiIvPjwvc3ZnPg==);
+		background-repeat: no-repeat;
+		background-position: top center;
+		content: '';
+		display: block;
+		height: 100px;
+		margin: 40px;
+	}
+
+	h1,
+	h2 {
+		margin-bottom: 0;
+	}
+
+	h1 {
+		margin-top: 0;
+	}
+
+	h2 {
+		padding-top: 8px;
+		border-top: 1px solid #B3B3B3;
+	}
+
+	.container {
+		max-width: 680px;
+		margin: 0 auto;
+		padding-top: 100px;
+		padding: 24px;
+		background: #FFF;
+		box-shadow: 0 0.5px 0 0 #FFF inset, 0 1px 2px 0 #B3B3B3;
+		line-height: 1.6;
+	}
+
+	code {
+		padding: 4px;
+		background: #EDEDED;
+	}
+
+	ul {
+		margin-bottom: 0;
+		list-style: none;
+		padding-left: 16px;
+	}
+
+	li+li {
+		margin-top: 4px;
+	}
+</style>
+
+<div class="container">
+	<h1>You're all up and running!</h1>
+	<p>If you're reading this, <code>cartridge-static-html</code> is working!</p>
+	<h2>Setup checklist</h2>
+	<ul>
+		<li>
+			<input type="checkbox" id="line-1" />
+			<label for="line-1">Add any <code>link</code> stylesheets you may need</label>
+		</li>
+		<li>
+			<input type="checkbox" id="line-2" />
+			<label for="line-2">Add any JavaScript files you may need</label>
+		</li>
+		<li>
+			<input type="checkbox" id="line-3" />
+			<label for="line-3">Update <code>title</code></label>
+		</li>
+		<li>
+			<input type="checkbox" id="line-4" />
+			<label for="line-4">Update/Remove favicon image details</label>
+		</li>
+		<li>
+			<input type="checkbox" id="line-5" />
+			<label for="line-5">Update/Remove Facebook meta information</label>
+		</li>
+		<li>
+			<input type="checkbox" id="line-6" />
+			<label for="line-6">Update/Remove Twitter meta information</label>
+		</li>
+		<li>
+			<input type="checkbox" id="line-7" />
+			<label for="line-7">Update/Remove Google Plus meta information</label>
+		</li>
+	</ul>
+</div>
+<!-- Welcome page code END -->
+
+{{> footer }} {{> footer }}
